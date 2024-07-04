@@ -5,6 +5,7 @@ static void Main()
         // 1. Get the first number
 Console.WriteLine("Enter 1st number: ");
 var first = Console.ReadLine();
+decimal.TryParse(first, out var firstArg);
 
         // 2. Enter operator
 Console.Write("Enter operator (+, -, *, /): ");
@@ -14,6 +15,7 @@ var oper = Console.ReadLine();
         // 3. Get the second number
 Console.WriteLine("Enter 2nd number: ");
 var second = Console.ReadLine();
+decimal.TryParse(second, out var secondArg);
 
 
         switch (Console.ReadLine())
@@ -50,4 +52,4 @@ var second = Console.ReadLine();
 
     }
 }
-    
+
