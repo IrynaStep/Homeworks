@@ -17,23 +17,26 @@ Console.WriteLine("Enter 2nd number: ");
 var second = Console.ReadLine();
 decimal.TryParse(second, out var secondArg);
 
+        // 4. Display the result
+ decimal result = 0;
+ 
 
-        switch (Console.ReadLine())
+        switch (oper)
         {
             case "1":
-                Console.WriteLine(first + second);
+                result = firstArg + secondArg;
                 break;
 
             case "2":
-                Console.WriteLine(first - second);
+                result = firstArg - secondArg;
                 break;
 
             case "3":
-                Console.WriteLine(first * second);
+                result = firstArg * secondArg;
                 break;
 
             case "4":
-                Console.WriteLine(first / second);
+                result = firstArg / secondArg;
                 break;
 
             default:
@@ -41,13 +44,10 @@ decimal.TryParse(second, out var secondArg);
                 break;
 
         }
-
-        // 4. Display the result
- double result = 0;
- Console.WriteLine("Result: " + result);
+        Console.WriteLine("Result: " + result);
 
         // Exit the app
- Console.WriteLine("Press any key to exit");
+        Console.WriteLine("Press any key to exit");
  Console.ReadKey();
 
     }
