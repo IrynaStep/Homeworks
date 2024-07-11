@@ -1,0 +1,177 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        int rowNumber, columnNumber;
+        while (true)
+        {
+            Console.WriteLine("Enter the number of rows");
+
+            var userInput = Console.ReadLine();
+            int.TryParse(userInput, out rowNumber);
+
+
+            Console.WriteLine("Enter the number of columns");
+
+            userInput = Console.ReadLine();
+            int.TryParse(userInput, out columnNumber);
+            if (rowNumber != default && columnNumber != default)
+            {
+                break;
+            }
+            else
+            {
+                Console.Clear();
+            }
+        }
+
+        int[,] array = new int[rowNumber, columnNumber];
+
+        for (int i = 0; i < rowNumber; i++)
+        {
+            for (int j = 0; j < columnNumber; j++)
+            {
+                Console.Write("Enter element of massive");
+                var element = Console.ReadLine();
+                array[i, j] = int.Parse(element);
+            }
+        }
+
+        Console.Clear();
+        for (int i = 0; i < rowNumber; i++)
+        {
+            for (int j = 0; j < columnNumber; j++)
+            {
+                Console.Write("Enter element of massive");
+                var element = Console.ReadLine();
+                array[i, j] = int.Parse(element);
+            }
+        }
+
+
+        Console.Clear();
+
+        for (int i = 0; i < rowNumber; i++) // Вывести все эл-ты массива
+        {
+            for (int j = 0; j < columnNumber; j++)
+            {
+                Console.Write($" {array[i, j]} "); // Вывели строку
+
+            }
+            Console.WriteLine();// Чтобы след строку из массива выводить на след строке
+        }
+
+
+        // Реализовать меню выбора действий
+
+        Console.WriteLine("Choose the needed operation: " +
+            "1. Найти количество положительных чисел в матрице" +
+            "2. Найти количество отрицательных чисел в матрице" +
+            "3. Сортировка элементов матрицы по возрастанию" +
+            "4. Сортировка элементов матрицы по убыванию" +
+            "5. Инверсия");
+
+        var userChoice = Console.ReadLine();
+        switch (userChoice)
+        {
+            case "1":
+                {
+                    int positiveCount = 0;
+                    for (int i = 0; i < rowNumber; i++)
+                    {
+                        for (int j = 0; j < columnNumber; j++)
+                        {
+                            if (array[i, j] > 0)
+                            {
+                                positiveCount++;
+                            }
+
+                        }
+                    }
+                    Console.WriteLine($"количество положительных чисел в матрице равно {positiveCount}");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                }
+            case "2":
+                {
+                    int negativeCount = 0;
+                    for (int i = 0; i < rowNumber; i++)
+                    {
+                        for (int j = 0; j < columnNumber; j++)
+                        {
+                            if (array[i, j] < 0)
+                            {
+                                negativeCount++;
+                            }
+
+                        }
+                    }
+                    Console.WriteLine($"количество отрицательных чисел в матрице равно {negativeCount}");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+                }
+
+            case "3":
+                Console.WriteLine();
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < array.GetLength(1) - 1; k++)
+                        {
+                            if (array[i, k] > array[i, k + 1])
+                            {
+                                int temp = array[i, k];
+                                array[i, k] = array[i, k + 1];
+                                array[i, k + 1] = temp;
+
+                            }
+                        }
+
+                    }
+                }
+                Console.WriteLine("Sort accending");
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        Console.Write(array[i, j] + " ");
+                    }
+                }
+                Console.WriteLine("To contunue press any key");
+                Console.ReadKey();
+                Console.WriteLine();
+                break;
+
+                case "4":
+                Console.WriteLine();
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+ 
+
+                    }
+                }
+                Console.WriteLine("Sort accending");
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        Console.Write(array[i, j] + " ");
+                    }
+                }
+                Console.WriteLine("To contunue press any key");
+                Console.ReadKey();
+                Console.WriteLine(); break ;
+        }
+    }
+
+
+
+
+}
