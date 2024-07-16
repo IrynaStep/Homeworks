@@ -1,0 +1,59 @@
+//string ConsoleText = "A2 reading Read22ing practi66777ce to help you understand simple texts and find specific information in everyday material. Texts include emails, invitations, personal messages, tips, notices and signs 5 3 5.";
+
+//var ArrayWords = ConsoleText.Split(new char[] {' ', ',', '.', ':' }, StringSplitOptions.RemoveEmptyEntries);
+//var counter = 0;
+//var result = string.Empty;
+//var maxCount = 0;
+
+//foreach (var word in ArrayWords)
+//{
+//    for (int index = 0; index < word.Length; index++)
+//    {
+//        if (char.IsDigit(word[index]))
+//            {
+//            counter++;
+//        }
+
+//    }
+//    if (maxCount < counter)
+//    {
+//        result = word; 
+//        maxCount = counter;
+//    }
+//    counter = 0;
+
+//}
+//Console.WriteLine(result);
+
+
+
+string text = File.ReadAllText("C:\\Users\\irina\\OneDrive\\Desktop\\File.txt");
+
+Console.WriteLine(text);
+
+var ArrayWords = text.Split(new char[] { ' ', ',', '.', ':' }, StringSplitOptions.RemoveEmptyEntries);
+var counter = 0;
+var result = string.Empty;
+var maxCount = 0;
+
+foreach (var word in ArrayWords)
+{
+    for (int index = 0; index < word.Length; index++)
+    {
+        if (char.IsDigit(word[index]))
+        {
+            counter++;
+        }
+
+    }
+    if (maxCount < counter)
+    {
+        result = word;
+        maxCount = counter;
+    }
+    counter = 0;
+
+}
+Console.WriteLine(result);
+
+
