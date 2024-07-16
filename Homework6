@@ -1,0 +1,74 @@
+//1.Класс Phone.
+//Создайте класс Phone, который содержит переменные number, model и
+//weight.
+//Создайте три экземпляра этого класса.
+//Выведите на консоль значения их переменных.
+//Добавить в класс Phone методы: receiveCall, имеет один параметр – имя
+//звонящего. Выводит на консоль сообщение “Звонит {name}”. getNumber –
+//возвращает номер телефона. Вызвать эти методы для каждого из объектов.
+//Добавить конструктор в класс Phone, который принимает на вход три
+//параметра для инициализации переменных класса - number, model и weight.
+//Добавить конструктор, который принимает на вход два параметра для
+//инициализации переменных класса - number, model.
+//Добавить конструктор без параметров.
+//Вызвать из конструктора с тремя параметрами конструктор с
+//двумя.
+//Добавьте перегруженный метод receiveCall, который принимает два
+//параметра - имя звонящего и номер телефона звонящего. Вызвать этот
+//метод.
+//Создать метод sendMessage с аргументами переменной длины. Данный
+//метод принимает на вход номера телефонов, которым будет отправлено
+//сообщение. Метод выводит на консоль номера этих телефонов.
+//Дополнительное задание
+{
+    PHONE Phone = new PHONE();
+    PHONE Phone1 = new PHONE("+3808887865", "Xiaomi", 234);
+    PHONE Phone2 = new PHONE("+6808887865", "iPhone");
+
+    Console.WriteLine(Phone2.GetNumber());
+    Console.WriteLine(Phone1.GetNumber());
+    Console.WriteLine(Phone.GetNumber());
+
+    Phone1.recieveCall("Vasya");
+
+    Console.ReadLine();
+}
+
+
+    public class PHONE
+{
+    string Number;
+    string Model;
+    decimal weight;
+
+    public PHONE()
+    {
+        Number = "Unknown number";
+        Model = "Unknown model";
+        weight = 0;
+    }
+
+    public PHONE(string userNumber, string userModel)
+    {
+        Number = userNumber;
+        Model = userModel;
+        weight = 0;
+    }
+
+    public PHONE(string userNumber, string userModel, decimal phoneWeight)
+    {
+        Number = userNumber;
+        Model = userModel;
+        weight = phoneWeight;
+    }
+
+    public void recieveCall(string name)
+    {
+        Console.WriteLine($"{name} calls");
+    }
+
+    public string GetNumber()
+    {
+        return Number;
+    }
+}
